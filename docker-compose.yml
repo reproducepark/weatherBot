@@ -1,0 +1,11 @@
+services:
+  weather:
+    container_name: weather-python
+    build: 
+      context: .
+    # volumes:
+    #   - ./src:/src
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    command: "nohup python Main.py &"
